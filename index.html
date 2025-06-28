@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          .first {
+               background-color: red;
+               display: block;
+          }
+
+          .sec {
+               background-color: salmon;
+               display: inline;
+          }
+     </style>
+</head>
+
+<body>
+     <h1 class="first" id="heading">good <span style="color: blue; background-color: #fff;">morning</span></h1>
+     <h1 class="sec">good night</h1>
+     <span style="background-color: blue; font-size: 2rem;">
+          span
+     </span>
+     <span style="background-color: beige; display: block; font-size: 2rem;">
+          span
+     </span>
+
+     <script>
+          const heading = document.querySelector("#heading")
+
+          heading.addEventListener("mouseover", () => {
+               console.log("its a heading")
+          })
+     </script>
+</body>
+
+</html>
