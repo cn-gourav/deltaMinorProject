@@ -1,20 +1,16 @@
 import { useEffect , useState } from "react";
 
 function useCurrencyInfo(currency) {
-     fetch(`https://api.exchangerate-api.com/v4/latest/${currency}`)
-        .then((response) => response.json())
-            .then((data) => {
-               setCurrencyInfo(data);
-            })
-     const [currencyInfo, setCurrencyInfo] = useState(null);
-     useEffect(() => {
-          if (currency) {
-               fetch(`https://api.exchangerate-api.com/v4/latest/${currency}`)
-                    .then((response) => response.json())
-                    .then((data) => {
-                         setCurrencyInfo(data);
-                    });
-          }
-     }, [currency]);
-     return currencyInfo;
+     useEffect(()=>{
+          const [data , setData] = useState({})
+          
+          fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
+          ,then((res)=> res.json())
+          .then((res) => setData(res[currency]))
+          console.log(data)
+     },[currency])
+     console.log(data)
+     return data
 }
+
+export default useCurrencyInfo; 
