@@ -3,5 +3,5 @@ export default function App() {
     <>
       <h1>Redux</h1>
     </>
-  )
+  );
 }

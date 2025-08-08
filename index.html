@@ -4,37 +4,69 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-     <style>
-          .first {
-               background-color: red;
-               display: block;
-          }
-
-          .sec {
-               background-color: salmon;
-               display: inline;
-          }
-     </style>
+     <title>Student Management System</title>
+     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-     <h1 class="first" id="heading">good <span style="color: blue; background-color: #fff;">morning</span></h1>
-     <h1 class="sec">good night</h1>
-     <span style="background-color: blue; font-size: 2rem;">
-          span
-     </span>
-     <span style="background-color: beige; display: block; font-size: 2rem;">
-          span
-     </span>
+     <div class="container">
+          <h1>Student Management System</h1>
 
-     <script>
-          const heading = document.querySelector("#heading")
+          <h2>Registration Form</h2>
+          <form id="studentForm">
+               <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" required>
+                    <div id="nameError" class="error"></div>
+               </div>
 
-          heading.addEventListener("mouseover", () => {
-               console.log("its a heading")
-          })
-     </script>
+               <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" min="16" max="100" required>
+                    <div id="ageError" class="error"></div>
+               </div>
+
+               <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <div id="emailError" class="error"></div>
+               </div>
+
+               <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select id="course" required>
+                         <option value="">Select a course</option>
+                         <option value="Computer Science">Computer Science</option>
+                         <option value="Engineering">Engineering</option>
+                         <option value="Business Administration">Business Administration</option>
+                         <option value="Medicine">Medicine</option>
+                         <option value="Arts">Arts</option>
+                    </select>
+                    <div id="courseError" class="error"></div>
+               </div>
+
+               <button type="submit" id="addStudentBtn">Add Student</button>
+          </form>
+
+          <h2>Students List</h2>
+          <table id="studentsTable">
+               <thead>
+                    <tr>
+                         <th>Serial No.</th>
+                         <th>Name</th>
+                         <th>Age</th>
+                         <th>Email</th>
+                         <th>Course</th>
+                         <th>Actions</th>
+                    </tr>
+               </thead>
+               <tbody id="studentsTableBody">
+                    <!-- Student data will be inserted here -->
+               </tbody>
+          </table>
+     </div>
+
+     <script src="app.js"></script>
 </body>
 
 </html>

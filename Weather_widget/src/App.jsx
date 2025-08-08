@@ -2,11 +2,11 @@
 // import SearchBox from "./SearchBox";
 import WeatherApp from "./WeatherApp";
 function App() {
-  return (
-    <>
-      <WeatherApp />
-    </>
-  )
+    return (
+        <>
+            <WeatherApp />
+            here
+            <p>dk</p>
+        </>
+    );
 }
-
-export default App;
